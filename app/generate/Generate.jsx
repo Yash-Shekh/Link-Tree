@@ -50,7 +50,7 @@ const page = () => {
             body: raw
         };
 
-        const res = await fetch("http://localhost:3000/api/add", requestOptions)
+        const res = await fetch("/api/add", requestOptions)
         const result = await res.json()
 
         if (res.ok) {
