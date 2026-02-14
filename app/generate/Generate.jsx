@@ -52,11 +52,14 @@ const page = () => {
 
         const res = await fetch("http://localhost:3000/api/add", requestOptions)
         const result = await res.json()
-        toast(result.message)
-        setlinks([])
-        setHandle("")
-        setPic("")
 
+        if (res.ok) {
+            router.push(`/${Handle}`)
+            toast(result.message)
+            setlinks([])
+            setHandle("")
+            setPic("")
+        }
     }
 
     return (
