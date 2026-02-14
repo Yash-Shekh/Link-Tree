@@ -9,7 +9,7 @@ const NavBar = () => {
     const [open, setOpen] = useState(false);
     const pathName = usePathname()
     const showNavBar = ["/", "/generate"].includes(pathName)
-    return (<>        {showNavBar && <nav className='bg-white md:w-[90vw] p-3 my-4 md:my-8 mx-[5vw] rounded-full fixed top-2 flex items-center justify-between'>
+    return (<>        {showNavBar && <nav className='bg-white md:w-[90vw] w-[40vh] p-3 my-4 md:my-8  rounded-full fixed top-2 flex items-center justify-between mx-5 md:mx-[10vh] z-50 shadow-lg'>
         <div className='flex gap-2 md:gap-5 items-center'>
             <Link href={"/"}><img className='w-20 md:w-30 mx-2 md:mx-5'
                 src="https://cdn.prod.website-files.com/666255f7f2126f4e8cec6f8f/66634daccb34e6d65a41c76d_download.svg"
