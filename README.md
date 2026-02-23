@@ -92,7 +92,7 @@ Client → Next.js Server → MongoDB → Dynamic Page Rendering
 ## Installation
 
 ```bash id="wz1wru"
-git clone https://github.com/your-username/linktree-clone.git
+git clone https://github.com/Yash-Shekh/Link-Tree.git
 cd linktree-clone
 npm install
 npm run dev
@@ -114,7 +114,6 @@ GITHUB_SECRET=
 * Implemented dynamic routing for username-based pages
 * Fixed async data fetching issues in server components
 * Managed database queries efficiently for public pages
-* Handled authentication-protected dashboard routes
 
 ---
 
@@ -123,7 +122,6 @@ GITHUB_SECRET=
 * Dynamic routing in Next.js App Router
 * Full CRUD operations with MongoDB
 * Server vs Client component separation
-* Authentication flow handling
 * Real-world data fetching patterns
 
 ---
