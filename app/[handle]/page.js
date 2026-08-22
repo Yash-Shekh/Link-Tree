@@ -15,7 +15,7 @@ export default async function Page({ params }) {
         {item && <div className="flex flex-col justify-center items-center gap-4">
 
             {/* if item.pic is empty show public/default-profile-pic.png */}
-            < img className="w-40 rounded-full" src={ item.pic || "/default-profile-pic.png"} alt="" />
+            < img className="w-40 rounded-full" src={item.pic || "/default-profile-pic.png"} alt="" />
             {/* <img className="w-40 rounded-full" src={item.pic || "public/default-profile-pic.png"} alt="" /> */}
             <span className="text-xl font-bold">@{item.handle}</span>
 
@@ -25,9 +25,31 @@ export default async function Page({ params }) {
 
             <Link href="/"><button className="bg-white text-black px-4 py-2 rounded-full font-semibold">Back to Home</button></Link>
 
-            <div className="flex flex-col gap-4 my-4 w-75 text-center">
+            {/* Main code under development 22-08-2026 */}
+            {/* <div className="flex flex-col gap-4 my-4 w-75 text-center">
                 {item.links.map((item, index) => {
                     return <Link key={index} href={item.link}><div className="bg-white rounded-md text-black text-lg font-semibold px-5 py-2">{item.linktext}</div></Link>
+                })}
+            </div> */}
+
+            {/* New code added for External Links 22-08-2026 */}
+            <div className="flex flex-col gap-4 my-4 w-75 text-center">
+                {item.links.map((link, index) => {
+                    const url = /^https?:\/\//i.test(link.link)
+                        ? link.link
+                        : `https://${link.link}`;
+
+                    return (
+                        <a
+                            key={index}
+                            href={url}
+                            rel="noopener noreferrer"
+                        >
+                            <div className="bg-white rounded-md text-black text-lg font-semibold px-5 py-2">
+                                {link.linktext}
+                            </div>
+                        </a>
+                    );
                 })}
             </div>
         </div>}
